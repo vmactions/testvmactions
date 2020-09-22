@@ -15,7 +15,7 @@ jobs:
       id: test
       uses: vmactions/freebsd@main
       with:
-        envs: 'test'
+        envs: 'NGROK_TOKEN DEBUG'
         run: |
           pwd
           whoami
