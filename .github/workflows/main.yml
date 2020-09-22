@@ -7,6 +7,9 @@ jobs:
   testfreebsd:
     runs-on: macos-latest
     name: A job to test FreeBSD
+    env:
+      NGROK_TOKEN : ${{ secrets.NGROK_TOKEN }}
+      DEBUG: ${{ secrets.DEBUG }}
     steps:
     - name: Test FreeBSD
       id: test
