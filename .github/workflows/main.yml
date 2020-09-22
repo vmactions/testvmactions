@@ -9,7 +9,7 @@ jobs:
     steps:
     - name: Test FreeBSD
       id: test
-      uses: vmactions/freebsd
+      uses: vmactions/freebsd@main
       with:
         envs: 'test'
         run: "echo test run"
