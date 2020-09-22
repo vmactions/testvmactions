@@ -16,7 +16,10 @@ jobs:
       uses: vmactions/freebsd@main
       with:
         envs: 'test'
-        run: "echo test run"
+        run: |
+          pwd
+          whoami
+          env
 
       
       
