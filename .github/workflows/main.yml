@@ -16,6 +16,7 @@ jobs:
       uses: vmactions/freebsd@main
       with:
         envs: 'NGROK_TOKEN DEBUG'
+        install: pkg install -y curl
         run: |
           pwd
           whoami
