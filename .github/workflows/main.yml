@@ -23,5 +23,8 @@ jobs:
           whoami
           env
           freebsd-version
+    - uses: neilpang/debugger-action@master
+    
+      
       
       
