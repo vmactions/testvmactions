@@ -17,6 +17,7 @@ jobs:
       with:
         envs: 'MYTOKEN MYTOKEN2'
         prepare: pkg install -y curl
+        sync: rsync
         run: |
           pwd
           ls -lah
