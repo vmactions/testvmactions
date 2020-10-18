@@ -19,7 +19,10 @@ jobs:
       uses: vmactions/solaris-vm@main
       with:
         envs: 'MYTOKEN MYTOKEN2'
-
+        prepare: |
+          pkgadd -d http://get.opencsw.org/now
+          /opt/csw/bin/pkgutil -U
+          /opt/csw/bin/pkgutil -y -i socat 
         run: |
           pwd
           ls -lah
