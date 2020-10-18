@@ -1,32 +1,31 @@
-name: freebsd
+name: solaris
 
 on:
   push:
     paths:
-      - '.github/workflows/freebsd.yml'
+      - '.github/workflows/solaris.yml'
 
 jobs:
   testfreebsd:
     runs-on: macos-latest
-    name: A job to run test FreeBSD
+    name: A job to run test solaris
     env:
       MYTOKEN : ${{ secrets.MYTOKEN }}
       MYTOKEN2: "value2"
     steps:
     - uses: actions/checkout@v2
-    - name: Start FreeBSD
+    - name: Start solaris
       id: test
-      uses: vmactions/freebsd-vm@main
+      uses: vmactions/solaris-vm@main
       with:
         envs: 'MYTOKEN MYTOKEN2'
-        prepare: pkg install -y curl
-        sync: rsync
+        prepare: pkg install curl
         run: |
           pwd
           ls -lah
           whoami
           env
-          freebsd-version
+          cat /etc/release
     - uses: neilpang/debugger-action@master
     
       
