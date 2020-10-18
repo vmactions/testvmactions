@@ -19,7 +19,7 @@ jobs:
       uses: vmactions/solaris-vm@main
       with:
         envs: 'MYTOKEN MYTOKEN2'
-        prepare: pkg install --accept curl
+
         run: |
           pwd
           ls -lah
