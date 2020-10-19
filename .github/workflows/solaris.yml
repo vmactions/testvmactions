@@ -19,8 +19,7 @@ jobs:
       uses: vmactions/solaris-vm@main
       with:
         envs: 'MYTOKEN MYTOKEN2'
-        prepare: |
-          pkgutil -y -i socat 
+
         run: |
           pwd
           ls -lah
