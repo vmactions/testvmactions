@@ -26,8 +26,9 @@ jobs:
           whoami
           env
           cat /etc/release
-    - name: Setup tmate session
-      uses: mxschmitt/action-tmate@v3
+    - name: Sleep
+      run: sleep 20
+    - uses: neilpang/debugger-action@master
     
       
       
