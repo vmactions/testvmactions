@@ -26,7 +26,8 @@ jobs:
           whoami
           env
           cat /etc/release
-    - uses: neilpang/debugger-action@master
+    - name: Setup tmate session
+      uses: mxschmitt/action-tmate@v3
     
       
       
