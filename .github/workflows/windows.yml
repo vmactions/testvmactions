@@ -22,7 +22,7 @@ jobs:
     - name: Install cygwin base packages with chocolatey
       run: |
           choco config get cacheLocation
-          choco install --no-progress cygwin
+          choco install --no-progress cygwin 7zip.install
       shell: cmd
     - name: Install cygwin additional packages
       run: |
