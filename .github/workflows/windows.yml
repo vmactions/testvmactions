@@ -42,7 +42,10 @@ jobs:
       with:
         protocol: tcp
         port: 3389
-    - uses: neilpang/debugger-action@master
+    - name: Sleep
+      shell: cmd
+      run: |
+          pause
     
       
       
