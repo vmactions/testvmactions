@@ -45,7 +45,7 @@ jobs:
     - name: Sleep
       shell: cmd
       run: |
-          timeout 21600
+          timeout.exe 21600
     
       
       
