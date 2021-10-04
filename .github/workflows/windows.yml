@@ -38,7 +38,7 @@ jobs:
           echo "PATH=%PATH%"
     - name: Start Windows
       id: test
-      uses: vmactions/ngrok-tunnel@v0.0.1
+      uses: vmactions/ngrok-tunnel@main
       with:
         protocol: tcp
         port: 3389
