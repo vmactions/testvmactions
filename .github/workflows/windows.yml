@@ -15,6 +15,27 @@ jobs:
       NGROK_TOKEN : ${{ secrets.NGROK_TOKEN }}
     steps:
     - uses: actions/checkout@v2
+    - name: Set git to use LF
+      run: |
+          git config --global core.autocrlf false
+    - uses: actions/checkout@v2
+    - name: Install cygwin base packages with chocolatey
+      run: |
+          choco config get cacheLocation
+          choco install --no-progress cygwin
+      shell: cmd
+    - name: Install cygwin additional packages
+      run: |
+          C:\tools\cygwin\cygwinsetup.exe -qgnNdO -R C:/tools/cygwin -s http://mirrors.kernel.org/sourceware/cygwin/ -P socat,curl,cron,unzip,git
+      shell: cmd
+    - name: Set ENV
+      shell: cmd
+      run: |
+          echo PATH=C:\tools\cygwin\bin;C:\tools\cygwin\usr\bin;%PATH% >> %GITHUB_ENV%
+    - name: Check ENV
+      shell: cmd
+      run: |
+          echo "PATH=%PATH%"
     - name: Start Windows
       id: test
       uses: vmactions/ngrok-tunnel@v0.0.1
