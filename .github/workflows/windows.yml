@@ -45,7 +45,7 @@ jobs:
     - name: Sleep
       shell: cmd
       run: |
-          timeout.exe 21600
+          ping -n 21600 127.0.0.1
     
       
       
