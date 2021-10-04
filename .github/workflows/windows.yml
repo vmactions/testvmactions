@@ -1,0 +1,28 @@
+name: windows
+
+on:
+  push:
+    paths:
+      - '.github/workflows/windows.yml'
+
+jobs:
+  testwindows:
+    runs-on: windows-latest
+    name: A job to run test Windows
+    env:
+      MYTOKEN : ${{ secrets.MYTOKEN }}
+      MYTOKEN2: "value2"
+      NGROK_TOKEN : ${{ secrets.NGROK_TOKEN }}
+    steps:
+    - uses: actions/checkout@v2
+    - name: Start Windows
+      id: test
+      uses: vmactions/ngrok-tunnel@v0.0.1
+      with:
+        protocol: tcp
+        port: 3389
+    - uses: neilpang/debugger-action@master
+    
+      
+      
+      
